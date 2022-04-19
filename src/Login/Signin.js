@@ -52,26 +52,33 @@ export default function Signin() {
   const classes = useStyles();
   const [username, setUserName] = useState();
   const [password, setPassword] = useState();
+  
 
   const handleSubmit = async e => {
     e.preventDefault();
-    const response = await loginUser({
-      username,
-      password
-    });
-    if ('accessToken' in response) {
-      swal("Success", response.message, "success", {
-        buttons: false,
-        timer: 2000,
-      })
-      .then((value) => {
-        localStorage.setItem('accessToken', response['accessToken']);
-        localStorage.setItem('user', JSON.stringify(response['user']));
-        window.location.href = "/profile";
-      });
-    } else {
-      swal("Failed", response.message, "error");
-    }
+    console.log(username);
+    console.log(password);
+    console.log(document.getElementById('login_header'));
+    // document.getElementById('login_header').style.display = "none";
+    document.getElementById('login_name').innerHTML=username;
+    // window.location.href = "/";
+    // const response = await loginUser({
+    //   username,
+    //   password
+    // });
+    // if ('accessToken' in response) {
+    //   swal("Success", response.message, "success", {
+    //     buttons: false,
+    //     timer: 2000,
+    //   })
+    //   .then((value) => {
+    //     localStorage.setItem('accessToken', response['accessToken']);
+    //     localStorage.setItem('user', JSON.stringify(response['user']));
+    //     window.location.href = "/profile";
+    //   });
+    // } else {
+    //   swal("Failed", response.message, "error");
+    // }
   }
 
   return (
@@ -98,6 +105,7 @@ export default function Signin() {
               fullWidth
               id="email"
               name="email"
+              type="email"
               label="Email Address"
               onChange={e => setUserName(e.target.value)}
             />

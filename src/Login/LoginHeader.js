@@ -79,9 +79,9 @@ function Header() {
             <h4 style={{ color: "white" }}>Register</h4>
           </div>
         </Link>
-        <Link to="/login" style={{ textDecoration: "none" }}>
+        <Link id="login_header" to="/login" style={{ textDecoration: "none" }}>
           <div className="homeheader__right__home">
-            <h4 style={{ color: "yellow" }}>Login</h4>
+            <h4 id="login_name" style={{ color: "yellow" }}>Login</h4>
           </div>
         </Link>
       </div>
